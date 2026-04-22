@@ -17,5 +17,11 @@ public class UserController {
         this.userService = userService;
     }
 
+    @PostMapping
+    public String createUser(@RequestBody User request){
+        userService.addUser(request);
+        return "user created succesfully";
+    }
+
 
 }
