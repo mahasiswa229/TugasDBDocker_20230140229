@@ -23,5 +23,15 @@ public class UserController {
         return "user created succesfully";
     }
 
+    @GetMapping
+    public List<User> getAllUsers(){
+        return  userService.getAllUsers();
+    }
+
+    @GetMapping("/{id}")
+    public User getUserbyId(@PathVariable String id){
+        return userService.getUserById(id);
+    }
+
 
 }
